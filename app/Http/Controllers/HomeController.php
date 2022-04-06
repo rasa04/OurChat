@@ -28,14 +28,14 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = Auth::user()->id;
-        $chats = Chat::all()->where('belongs_to', $user_id);
+        /* $chats = Chat::all()->where('belongs_to', $user_id); */
+        $chats = User::find($user_id)->chats;
         return view('menu', ['chats' => $chats]);
     }
 
-    public function chat($id)
+    public function chat(Chat $chat_id)
     {
-        $chat = Chat::all()->where('id', $id)[1]->users;
-        //$users = ChatUser::all()->where('chat_id', $id);
-        return view('chat.index', compact('chat'));
+        $users = Chat::find($chat_id->id)->users;
+        return view('chat.index', ['chat' => $chat_id, 'users' => $users]); 
     }
 }

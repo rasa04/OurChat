@@ -10,7 +10,6 @@
       <td><a href="{{ route('chat', $chat->id) }}">Открыть</a></td>
       </tr>
     @endforeach
-    
   </tbody>
 </table>
 @endsection

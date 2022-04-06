@@ -18,5 +18,5 @@ Auth::routes();
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
-    Route::get('/chat/{id}', 'chat')->name('chat');
+    Route::get('/chat/{chat_id}', 'chat')->name('chat');
 });
