@@ -15,4 +15,18 @@
           @endforeach
         </tbody>
       </table>
+
+    <table class="table w-50 mt-5">
+        <h1>Сообщения:</h1>
+        <tbody>
+          @foreach ($messages as $message)
+            <tr><td>{{ $message->from_user }}</td>
+            <td>{{ $message->message }}</td>
+            <td>{{ $message->created_at}}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+
+
 @endsection
