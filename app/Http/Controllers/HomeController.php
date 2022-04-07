@@ -7,7 +7,10 @@ use App\Models\User;
 use App\Models\Chat;
 use App\Models\ChatMessage;
 use App\Models\ChatUser;
+use App\Models\Correspondens;
 use Illuminate\Support\Facades\Auth;
+
+use function PHPUnit\Framework\isEmpty;
 
 class HomeController extends Controller
 {
@@ -30,7 +33,12 @@ class HomeController extends Controller
     {
         $user_id = Auth::user()->id;
         $chats = User::find($user_id)->chats;
-        return view('menu', ['chats' => $chats]);
+
+/*         $correspondens = Correspondens::where('firstId', $user_id)->first();
+        if (isset($correspondens)) $correspondens = Correspondens::where('secondId', $user_id)->first()->users; */
+
+        $correspondens = Correspondens::all()->where('uId', $user_id);
+        return view('menu', ['chats' => $chats, 'correspondens' => $correspondens]);
     }
 
     public function chat(Chat $chat_id)
