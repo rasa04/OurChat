@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Chat;
-use App\Models\ChatUser;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -27,15 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $chats = Chat::all()->where('belongs_to', $user_id);
-        return view('menu', ['chats' => $chats]);
+        $user = Auth::user();
+        $chats = User::find($user->id)->chats;
+        return view('menu', compact('chats', 'user'));
     }
 
-    public function chat($id)
-    {
-        $chat = Chat::all()->where('id', $id)[1]->users;
-        //$users = ChatUser::all()->where('chat_id', $id);
-        return view('chat.index', compact('chat'));
-    }
 }

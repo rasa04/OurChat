@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +20,13 @@ Auth::routes();
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
-    Route::get('/chat/{id}', 'chat')->name('chat');
+});
+
+Route::controller(ChatController::class)->group(function(){
+    Route::get('/chat/{chat_id}', 'show')->name('chat.show');
+    Route::post('/chat', 'store')->name('chat.store');
+});
+
+Route::controller(MessageController::class)->group(function() {
+    Route::post('/chat/message', 'store')->name('chat.message.store');
 });
