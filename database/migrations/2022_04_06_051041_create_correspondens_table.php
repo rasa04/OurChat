@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('correspondens', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('chatId');
             $table->unsignedBigInteger('uId');
+            $table->timestamps();
             $table->foreign('uId')->references('id')->on('users');
         });
     }

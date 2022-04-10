@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('chatId');
             $table->text('message');
+            $table->unsignedBigInteger('from_user');
             $table->timestamps();
 
-            $table->foreign('chatId')->references('id')->on('correspondens');
+            $table->foreign('from_user')->references('id')->on('users');
         });
     }
 

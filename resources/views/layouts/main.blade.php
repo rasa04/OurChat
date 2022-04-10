@@ -24,11 +24,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">OurChat</a>
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <img src="data:image/jpeg;base64, @php echo base64_encode($user->profilePhoto) @endphp" alt="USER" class="w-25 rounded-circle">    
+            </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
             <div class="btn-group d-flex" role="group" aria-label="Basic outlined example">
-                <a href="{{ route('register') }}" type="button" class="btn btn-outline-primary">Sign up</a>
-                <a href="{{ route('login') }}" type="button" class="btn btn-outline-primary">Sign in</a>
+                <div class="">{{ $user->name }}</div>
+                <div class="">{{ $user->user_name }}</div>
+                <div class="">{{ $user->bio }}</div>
             </div>
         </div>
     </nav>

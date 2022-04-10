@@ -12,6 +12,6 @@ class Correspondens extends Model
     protected $guarded = [];
 
     public function users(){
-        return $this->belongsTo(User::class, 'uId', 'id');
+        return $this->belongsTo(User::class, 'id', 'uId');
     }
 }
