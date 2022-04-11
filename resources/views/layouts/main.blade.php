@@ -22,19 +22,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="data:image/jpeg;base64, @php echo base64_encode($user->profilePhoto) @endphp" alt="USER" class="w-25 rounded-circle">    
-            </a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <div class="btn-group d-flex" role="group" aria-label="Basic outlined example">
-                <div class="">{{ $user->name }}</div>
-                <div class="">{{ $user->user_name }}</div>
-                <div class="">{{ $user->bio }}</div>
-            </div>
-        </div>
-    </nav>
+    @include('inc.profile')
     <div id="app" class="mt-5">
         @yield('content')
     </div>

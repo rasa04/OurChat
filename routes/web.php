@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,9 @@ Route::controller(ChatController::class)->group(function(){
 
 Route::controller(MessageController::class)->group(function() {
     Route::post('/chat/message', 'store')->name('chat.message.store');
+});
+
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/profile', 'profile')->name('profile.show');
+    Route::patch('/profile', 'update')->name('profile.update');
 });
