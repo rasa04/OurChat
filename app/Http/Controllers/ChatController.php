@@ -56,7 +56,7 @@ class ChatController extends Controller
     public function show(Chat $chat_id)
     {
         $users = Chat::find($chat_id->id)->users;
-        $messages = ChatMessage::where('chatId', $chat_id->id)->orderBy('created_at', 'desc')->get();
+        $messages = ChatMessage::where('chatId', $chat_id->id)->get();
         return view('chat.index', ['chat' => $chat_id, 'users' => $users, 'messages' => $messages]);
     }
     /**
