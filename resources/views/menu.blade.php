@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    <table class="table w-50 mt-5">
+    <table class="table w-50 mt-5 col" >
         <h1>Создать группу</h1>
         <form action="{{ route('chat.store') }}" method="POST" enctype="multipart/form-data">
             @csrf

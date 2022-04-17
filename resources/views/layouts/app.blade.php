@@ -18,23 +18,19 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">OurChat</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <div class="btn-group d-flex" role="group" aria-label="Basic outlined example">
-                <a href="{{ route('register') }}" type="button" class="btn btn-outline-primary">Sign up</a>
-                <a href="{{ route('login') }}" type="button" class="btn btn-outline-primary">Sign in</a>
-            </div>
-        </div>
+    <nav id="app_enter">
+        <a id="logo" href="{{ route('home') }}">OurChat</a>
+        @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login')
+            <a id="enter" href="{{ route('register') }}" type="button">Sign up</a>
+        @else
+            <a id="enter" href="{{ route('login') }}" type="button">Sign in</a>
+        @endif
     </nav>
-    <div id="app" class="mt-5">
-        @yield('content')
-    </div>
+    @yield('content')
 </body>
 
 </html>

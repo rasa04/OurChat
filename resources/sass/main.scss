@@ -1,0 +1,84 @@
+@import "./app";
+
+
+#app_enter {
+    a {
+        text-decoration: none;
+    }
+    #logo {
+        color: $cmc;
+        font-size: xx-large;
+        font-weight: bold;
+    }
+    #enter {
+        background: $cmc;
+        float: right;
+        padding: 1%;
+        border-radius:70px;
+        color: $cmc_light;
+    }
+    #enter:hover{
+        transition: all 0.3s;
+        background: $cmc_light;
+        color: $cmc;
+    }
+    padding-bottom: 1%;
+    border-bottom: 1px solid $cmc;
+}
+
+#form-login {
+    width: 100%;
+    height: auto;
+    @media screen and (min-width: 720px)
+    {
+        #action {
+            user-select: none;
+            margin-top: 5%;
+            margin-bottom: 2%;
+            text-align: center;
+            font-size: 2em;
+            font-family: serif;
+        }
+        form {
+            display: block;
+            width: 50%;
+            margin-left: 32%;
+        }
+    };
+    @media screen and (max-width: 720px)
+    {
+        #action {
+            user-select: none;
+            margin-top: 40%;
+            margin-bottom: 2%;
+            text-align: center;
+            font-size: 2em;
+            font-family: serif;
+        }
+        form {
+            display: block;
+            width: 100%;
+        }
+    };
+}
+
+#show_profile {
+    width: 100%;
+    background: snow;
+
+    img {
+        display: block;
+        width: 10%;
+        height: 10%;
+        border-radius: 10px;
+    }
+    #name {
+        padding: 0%;
+        display: block;
+        width: 20%;
+        height: auto;
+        font-family: serif;
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+}

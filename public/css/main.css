@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+@media screen and (min-width: 720px) {
+  .label {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .form_input {
+    margin-bottom: 5%;
+    width: 70%;
+    padding-top: 1.6%;
+    padding-bottom: 1.6%;
+    border: 1px solid #3979c2;
+    border-radius: 10px;
+  }
+
+  .btn_enter {
+    margin-top: 5%;
+    width: 100px;
+    height: 50px;
+    background: #3979c2;
+    border: none;
+    border-radius: 25px;
+    font-family: serif;
+    font-size: large;
+  }
+
+  .btn_enter:hover {
+    background: #117446;
+  }
+
+  .reset_password {
+    float: right;
+  }
+}
+@media screen and (max-width: 720px) {
+  .label {
+    font-family: serif;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .form_input {
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: 1px solid #3979c2;
+    border-radius: 10px;
+  }
+
+  .btn_enter {
+    margin-top: 10%;
+    width: 100px;
+    height: 50px;
+    background: #3979c2;
+    color: #eecfe3;
+    border: none;
+    border-radius: 10px;
+    font-family: serif;
+    font-size: large;
+  }
+
+  .btn_enter:hover {
+    background: #117446;
+  }
+
+  .reset_password {
+    float: right;
+    text-decoration: none;
+  }
+}
+#app_enter {
+  padding-bottom: 1%;
+  border-bottom: 1px solid #3979c2;
+}
+#app_enter a {
+  text-decoration: none;
+}
+#app_enter #logo {
+  color: #3979c2;
+  font-size: xx-large;
+  font-weight: bold;
+}
+#app_enter #enter {
+  background: #3979c2;
+  float: right;
+  padding: 1%;
+  border-radius: 70px;
+  color: #eecfe3;
+}
+#app_enter #enter:hover {
+  transition: all 0.3s;
+  background: #eecfe3;
+  color: #3979c2;
+}
+
+#form-login {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 720px) {
+  #form-login #action {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 2em;
+    font-family: serif;
+  }
+  #form-login form {
+    display: block;
+    width: 50%;
+    margin-left: 32%;
+  }
+}
+@media screen and (max-width: 720px) {
+  #form-login #action {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-top: 40%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 2em;
+    font-family: serif;
+  }
+  #form-login form {
+    display: block;
+    width: 100%;
+  }
+}
+
+#show_profile {
+  width: 100%;
+  background: snow;
+}
+#show_profile img {
+  display: block;
+  width: 10%;
+  height: 10%;
+  border-radius: 10px;
+}
+#show_profile #name {
+  padding: 0%;
+  display: block;
+  width: 20%;
+  height: auto;
+  font-family: serif;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
