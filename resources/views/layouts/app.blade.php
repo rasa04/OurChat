@@ -23,7 +23,7 @@
 
 <body>
     <nav id="app_enter">
-        <a id="logo" href="{{ route('home') }}">OurChat</a>
+        <a id="ourchat" href="{{ route('home') }}">OurChat</a>
         @if (Illuminate\Support\Facades\Route::currentRouteName() == 'login')
             <a id="enter" href="{{ route('register') }}" type="button">Sign up</a>
         @else

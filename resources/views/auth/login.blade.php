@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div>
+            <div id="remember">
                 <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                 <label for="remember">

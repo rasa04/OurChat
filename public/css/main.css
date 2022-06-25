@@ -1,100 +1,104 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-@media screen and (min-width: 720px) {
-  .label {
-    font-family: serif;
-    font-weight: bold;
-    font-size: 1em;
-  }
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  .form_input {
-    margin-bottom: 5%;
-    width: 70%;
-    padding-top: 1.6%;
-    padding-bottom: 1.6%;
-    border: 1px solid #3979c2;
-    border-radius: 10px;
-  }
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
 
-  .btn_enter {
-    margin-top: 5%;
-    width: 100px;
-    height: 50px;
-    background: #3979c2;
-    border: none;
-    border-radius: 25px;
-    font-family: serif;
-    font-size: large;
-  }
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
 
-  .btn_enter:hover {
-    background: #117446;
-  }
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
 
-  .reset_password {
-    float: right;
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-@media screen and (max-width: 720px) {
-  .label {
-    font-family: serif;
-    font-weight: bold;
-    font-size: 1em;
-  }
-
-  .form_input {
-    margin-left: 5%;
-    margin-bottom: 5%;
-    width: 90%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    border: 1px solid #3979c2;
-    border-radius: 10px;
-  }
-
-  .btn_enter {
-    margin-top: 10%;
-    width: 100px;
-    height: 50px;
-    background: #3979c2;
-    color: #eecfe3;
-    border: none;
-    border-radius: 10px;
-    font-family: serif;
-    font-size: large;
-  }
-
-  .btn_enter:hover {
-    background: #117446;
-  }
-
-  .reset_password {
-    float: right;
-    text-decoration: none;
+@media screen and (min-width: 720px) {
+  body {
+    margin-left: 30%;
+    width: 40%;
+    border-left: 3px solid #eecfe3;
+    border-right: 3px solid #eecfe3;
   }
 }
 #app_enter {
+  padding-top: 1%;
   padding-bottom: 1%;
-  border-bottom: 1px solid #3979c2;
+  border-bottom: 1px solid #eecfe3;
 }
 #app_enter a {
   text-decoration: none;
 }
-#app_enter #logo {
-  color: #3979c2;
-  font-size: xx-large;
+#app_enter #ourchat {
+  margin-left: 1%;
+  font-family: "Nunito";
+  color: #782e7b;
   font-weight: bold;
 }
 #app_enter #enter {
-  background: #3979c2;
   float: right;
-  padding: 1%;
-  border-radius: 70px;
-  color: #eecfe3;
+  font-size: smaller;
+  border-radius: 5px;
+  color: #782e7b;
+  margin-right: 1%;
 }
 #app_enter #enter:hover {
-  transition: all 0.3s;
-  background: #eecfe3;
-  color: #3979c2;
+  transition: all 0.5s;
+  border: 1px solid #eecfe3;
 }
 
 #form-login {
@@ -103,20 +107,66 @@
 }
 @media screen and (min-width: 720px) {
   #form-login #action {
+    font-family: "Nurito";
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    margin-top: 5%;
+    margin-top: 3%;
     margin-bottom: 2%;
     text-align: center;
-    font-size: 2em;
-    font-family: serif;
+    font-size: 1.3em;
   }
   #form-login form {
     display: block;
-    width: 50%;
-    margin-left: 32%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+  }
+  #form-login .label {
+    margin-left: 11%;
+    font-family: "Nurito";
+    font-size: 0.7em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  #form-login .form_input {
+    padding: 2%;
+    margin-left: 11%;
+    margin-bottom: 1%;
+    width: 80%;
+    border: 1px solid #782e7b;
+    border-radius: 5px;
+  }
+  #form-login .btn_enter {
+    margin-top: 2%;
+    margin-left: 25%;
+    width: 210px;
+    height: 40px;
+    color: #782e7b;
+    border: 1px solid #782e7b;
+    border-radius: 5px;
+    font-family: "Nurito";
+    font-size: large;
+  }
+  #form-login .btn_enter:hover {
+    color: #eecfe3;
+    background-color: #782e7b;
+    transition: all 0.1s;
+  }
+  #form-login #remember {
+    font-size: 0.7em;
+    padding: 2%;
+  }
+  #form-login .reset_password {
+    margin-top: 5%;
+    margin-right: 3%;
+    font-size: 0.7em;
+    color: #782e7b;
+    float: right;
+    text-decoration: none;
   }
 }
 @media screen and (max-width: 720px) {
@@ -135,24 +185,98 @@
     display: block;
     width: 100%;
   }
+  #form-login .label {
+    margin-left: 11%;
+    font-family: "Nurito";
+    font-size: 0.7em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  #form-login .form_input {
+    padding: 2%;
+    margin-left: 11%;
+    margin-bottom: 1%;
+    width: 80%;
+    border: 1px solid #782e7b;
+    border-radius: 5px;
+  }
+  #form-login .btn_enter {
+    margin-top: 2%;
+    margin-left: 25%;
+    width: 210px;
+    height: 40px;
+    color: #782e7b;
+    border: 1px solid #782e7b;
+    border-radius: 5px;
+    font-size: large;
+    font-family: "Nurito";
+  }
+  #form-login .btn_enter:hover {
+    color: #eecfe3;
+    background-color: #782e7b;
+    transition: all 0.2s;
+  }
+  #form-login #remember {
+    font-size: 0.7em;
+    padding: 2%;
+  }
+  #form-login .reset_password {
+    margin-top: 5%;
+    margin-right: 3%;
+    font-size: 0.7em;
+    color: #782e7b;
+    float: right;
+    text-decoration: none;
+  }
 }
 
-#show_profile {
+@media screen and (max-width: 799px) {
+  #show_profile {
+    width: 100%;
+    background: snow;
+  }
+  #show_profile img {
+    display: block;
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+  }
+  #show_profile #name {
+    padding: 0%;
+    display: block;
+    width: 20%;
+    height: auto;
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  #show_profile {
+    width: 100%;
+    height: 100%;
+    background: #0f414a;
+  }
+  #show_profile img {
+    display: block;
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+  }
+  #show_profile #name {
+    padding: 0%;
+    display: block;
+    width: 20%;
+    height: auto;
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 1.2rem;
+  }
+}
+
+#profile {
   width: 100%;
-  background: snow;
-}
-#show_profile img {
-  display: block;
-  width: 10%;
-  height: 10%;
-  border-radius: 10px;
-}
-#show_profile #name {
-  padding: 0%;
-  display: block;
-  width: 20%;
-  height: auto;
-  font-family: serif;
-  font-weight: bolder;
-  font-size: 1.2rem;
+  background-color: #8a748a;
 }

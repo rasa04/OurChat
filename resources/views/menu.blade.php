@@ -4,9 +4,9 @@
         <h1>Создать группу</h1>
         <form action="{{ route('chat.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="text" name="name" class="form-control w-25 mb-2 p-2" placeholder="Имя чата">
-            <input type="text" name="description" class="form-control w-25 mb-2 p-2" placeholder="Описание">
-            <input type="file" name="chatPhoto" class="form-control form-control-sm w-25 mb-2 p-2">
+            <input type="text" name="name" class="" placeholder="Имя чата">
+            <input type="text" name="description" class="" placeholder="Описание">
+            <input type="file" name="chatPhoto" class="">
             <input type="number" name="belongs_to" value="{{ Auth::id() }}"
                 style="visibility: hidden; width: 0; height: 0">
             <button type="submit" class="btn btn-success w-25 mb-2 p-2">Создать</button>
