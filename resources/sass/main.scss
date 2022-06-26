@@ -235,45 +235,101 @@ body {
 }
 
 #show_profile {
-    @media screen and (max-width: 799px) {
-        width: 100%;
-        background: snow;
-
-        img {
-            display: block;
-            width: 10%;
-            height: 10%;
-            border-radius: 10px;
-        }
-        #name {
-            padding: 0%;
-            display: block;
-            width: 20%;
-            height: auto;
-            font-family: serif;
-            font-weight: bolder;
-            font-size: 1.2rem;
-        }
-    }
-    @media screen and (min-width: 800px) {
+    font-family: 'Nurito';
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media screen and (min-width: 720px) {
         width: 100%;
         height: 100%;
-        background: rgb(15, 65, 74);
-
-        img {
-            display: block;
-            width: 10%;
-            height: 10%;
-            border-radius: 10px;
+        background: $cmc;
+        grid-auto-rows: minmax(100px, auto);
+        #image {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 100%;
+            img {
+                user-select: none;
+                width: 100%;
+                border-bottom-right-radius: 5px;
+            }
         }
         #name {
-            padding: 0%;
-            display: block;
-            width: 20%;
-            height: auto;
-            font-family: serif;
-            font-weight: bolder;
-            font-size: 1.2rem;
+            ::before{
+                content: 'Имя: ';
+                font-size: 0.5em;
+                color: silver;
+            }
+            grid-column-start: 3;
+            grid-column-end: 5;
+            color: aliceblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .indicators {
+            font-size: 0.7em;
+            color: aliceblue;
+            margin-left: 5%;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        #bio {
+            ::before{
+                content: 'Био: ';
+                font-size: 0.5em;
+                color: silver;
+            }
+            color: aliceblue;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+    }
+    @media screen and (max-width: 720px) {
+        width: 100%;
+        height: 100%;
+        background: $cmc;
+        grid-auto-rows: minmax(100px, auto);
+        #image {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            width: 100%;
+            img {
+                user-select: none;
+                width: 100%;
+                border-bottom-right-radius: 25px;
+            }
+        }
+        #name {
+            ::before{
+                content: 'Имя: ';
+                font-size: 0.5em;
+                color: silver;
+            }
+            grid-column-start: 3;
+            grid-column-end: 5;
+            color: aliceblue;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .indicators {
+            font-size: 0.7em;
+            color: aliceblue;
+            margin-left: 5%;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        #bio {
+            ::before{
+                content: 'Био: ';
+                font-size: 0.5em;
+                color: silver;
+            }
+            color: aliceblue;
+            grid-column-start: 1;
+            grid-column-end: 5;
         }
     }
 }
@@ -289,3 +345,119 @@ body {
     }
 }
 
+#groups {
+    a {
+        text-decoration: none;
+    }
+    margin-top: 1px;
+    border-radius: 25px;
+    border-start-start-radius: -25px;
+    background-color: rgb(59, 78, 105);
+    input {
+        width: 45%;
+        padding: 1%;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+    }
+    .title {
+        margin: 1%;
+        margin-left: 2%;
+        font-size: 1em;
+        color: white;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: bold;
+    }
+    #name {
+        margin-left: 5%;
+    }
+    #file {
+        display: none;
+    }
+    #file_label {
+        float: left;
+        display: block;
+        margin-left: 5%;
+        margin-top: 1%;
+        font: 0.7em sans-serif;
+        color: silver;
+        text-align: center;
+        padding: 2%;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        width: 45%;
+    }
+    #file_label:hover {
+        background-color: snow;
+    }
+    #btn_create {
+        margin-left: 1%;
+        margin-top: 1%;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.7em;
+        color: silver;
+        width: 45%;
+        padding: 2%;
+    }
+    #group_list {
+        display: inline-grid;
+    }
+    .group {
+        border-bottom: 1px solid silver;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        img {
+            margin-top: 10%;
+            margin-left: 10%;
+            width: 80%;
+            height: 80%;
+            border: none;
+            border-radius: 50%;
+        }
+        p {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+        }
+    }
+}
+
+#profile_edit {
+    #image{
+        img {
+            width: 100%;
+        }
+        #select_photo {
+            display: none;
+        }
+    }
+    #data {
+        input {
+            margin-top: 1%;
+            margin-left: 5%;
+            width: 90%;
+            border: none;
+            border-radius: 10px;
+        }
+        #save button{
+            margin-top: 2%;
+            margin-left: 23%;
+            width: 50%;
+            padding: 3%;
+            font-family: 'Nurito';
+            font-size: 0.7em;
+            font-weight: bold;
+            color: aqua;
+            background-color: $cmc;
+            border: none;
+            border-radius: 5px;
+        }
+        #save button:hover {
+            font-size: 1em;
+        }
+    }
+}

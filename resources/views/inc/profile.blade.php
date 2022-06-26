@@ -1,25 +1,18 @@
 <div id="show_profile">
-    <a href="{{ route('profile.show') }}">
-        <img src="{{ asset('/storage/' . $user->profilePhoto) }}" alt="Фото профиля">
-    </a>
-    <p id="name">{{ $user->name }}</p>
-    <p style="color: #2b2a2a;">{{ $user->bio }}</p>
-    <div>
-        <div>
-            <p>Группы</p>
-            <p>{{ $user->chats->count() }}</p>
-        </div>
-        <div class="px-3">
-            <p>Followers</p>
-            <p>976</p>
-        </div>
-        <div>
-            <p>Rating</p>
-            <p>8.5</p>
-        </div>
+    <div id="image">
+        <a href="{{ route('profile.show') }}">
+            <img src="{{ asset('/storage/' . $user->profilePhoto) }}" alt="Фото профиля">
+        </a>
     </div>
-    <div class="d-flex pt-1">
-        <button type="button">Chat</button>
-        <button type="button">Follow</button>
+    <div id="name">
+        <p>{{ $user->name }}</p>
+    </div>
+    <div class="indicators">
+        <p>Группы: {{ $user->chats->count() }}</p>
+        <p>Подписчики: 976</p>
+        <p>Рейтинг: 8.5</p>
+    </div>
+    <div id="bio">
+        <p id="bio"> {{ $user->bio }} </p>
     </div>
 </div>

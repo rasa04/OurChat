@@ -57,6 +57,7 @@ class ChatController extends Controller
     {
         $users = Chat::find($chat_id->id)->users;
         $messages = ChatMessage::where('chatId', $chat_id->id)->get();
+        // dd($users);
         return view('chat.index', ['chat' => $chat_id, 'users' => $users, 'messages' => $messages]);
     }
     /**
